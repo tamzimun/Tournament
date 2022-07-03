@@ -1,0 +1,498 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1C86A02828642530000DE550 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C86A02728642530000DE550 /* AppDelegate.swift */; };
+		1C86A02A28642530000DE550 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C86A02928642530000DE550 /* SceneDelegate.swift */; };
+		1C86A02C28642530000DE550 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C86A02B28642530000DE550 /* ViewController.swift */; };
+		1C86A02F28642530000DE550 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C86A02D28642530000DE550 /* Main.storyboard */; };
+		1C86A03128642531000DE550 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1C86A03028642531000DE550 /* Assets.xcassets */; };
+		1C86A03428642531000DE550 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C86A03228642531000DE550 /* LaunchScreen.storyboard */; };
+		1C86A03C286425C9000DE550 /* NetworkManagerAF.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C86A03B286425C9000DE550 /* NetworkManagerAF.swift */; };
+		1C86A0402864269F000DE550 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C86A03F2864269F000DE550 /* SignUpViewController.swift */; };
+		1C86A042286426AC000DE550 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C86A041286426AC000DE550 /* LoginViewController.swift */; };
+		1C86A044286426BA000DE550 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C86A043286426BA000DE550 /* MainViewController.swift */; };
+		1C86A0472864273B000DE550 /* PersonSignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C86A0462864273B000DE550 /* PersonSignUp.swift */; };
+		1C86A04928642752000DE550 /* PersonLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C86A04828642752000DE550 /* PersonLogin.swift */; };
+		1C86A04C2864277D000DE550 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C86A04B2864277D000DE550 /* Utilities.swift */; };
+		1C86A05428644D34000DE550 /* TournamentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C86A05328644D34000DE550 /* TournamentTableViewCell.swift */; };
+		1C86A056286451C4000DE550 /* AddTournamentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C86A055286451C4000DE550 /* AddTournamentViewController.swift */; };
+		1C86A05828645236000DE550 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C86A05728645236000DE550 /* DetailViewController.swift */; };
+		1C86A05B28646CC9000DE550 /* teenage-mutant-ninja-turtles-season-5-official-trailer-baby-turtles-aliens_5esaxJkR.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 1C86A05A28646CC9000DE550 /* teenage-mutant-ninja-turtles-season-5-official-trailer-baby-turtles-aliens_5esaxJkR.mp4 */; };
+		1C86A05E28649924000DE550 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 1C86A05D28649924000DE550 /* Alamofire */; };
+		1C86A0612864A38F000DE550 /* Urls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C86A0602864A38F000DE550 /* Urls.swift */; };
+		E67DED162864DE7E00E3AAC8 /* TournamentDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = E67DED152864DE7E00E3AAC8 /* TournamentDetails.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		1C86A02428642530000DE550 /* TournamentManager1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TournamentManager1.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1C86A02728642530000DE550 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		1C86A02928642530000DE550 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		1C86A02B28642530000DE550 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		1C86A02E28642530000DE550 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		1C86A03028642531000DE550 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1C86A03328642531000DE550 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		1C86A03528642531000DE550 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1C86A03B286425C9000DE550 /* NetworkManagerAF.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManagerAF.swift; sourceTree = "<group>"; };
+		1C86A03F2864269F000DE550 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		1C86A041286426AC000DE550 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		1C86A043286426BA000DE550 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		1C86A0462864273B000DE550 /* PersonSignUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonSignUp.swift; sourceTree = "<group>"; };
+		1C86A04828642752000DE550 /* PersonLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonLogin.swift; sourceTree = "<group>"; };
+		1C86A04B2864277D000DE550 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
+		1C86A05328644D34000DE550 /* TournamentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TournamentTableViewCell.swift; sourceTree = "<group>"; };
+		1C86A055286451C4000DE550 /* AddTournamentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTournamentViewController.swift; sourceTree = "<group>"; };
+		1C86A05728645236000DE550 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		1C86A05A28646CC9000DE550 /* teenage-mutant-ninja-turtles-season-5-official-trailer-baby-turtles-aliens_5esaxJkR.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "teenage-mutant-ninja-turtles-season-5-official-trailer-baby-turtles-aliens_5esaxJkR.mp4"; sourceTree = "<group>"; };
+		1C86A0602864A38F000DE550 /* Urls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Urls.swift; sourceTree = "<group>"; };
+		E67DED152864DE7E00E3AAC8 /* TournamentDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TournamentDetails.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1C86A02128642530000DE550 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1C86A05E28649924000DE550 /* Alamofire in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1C86A01B28642530000DE550 = {
+			isa = PBXGroup;
+			children = (
+				1C86A02628642530000DE550 /* TournamentManager1 */,
+				1C86A02528642530000DE550 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		1C86A02528642530000DE550 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1C86A02428642530000DE550 /* TournamentManager1.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1C86A02628642530000DE550 /* TournamentManager1 */ = {
+			isa = PBXGroup;
+			children = (
+				1C86A05928646C73000DE550 /* Media */,
+				1C86A0452864271C000DE550 /* Models */,
+				1C86A05028644CF9000DE550 /* Tournament */,
+				1C86A04A2864276C000DE550 /* Helpers */,
+				1C86A03E286425F6000DE550 /* View Controllers */,
+				1C86A05F2864A35C000DE550 /* NetworkManager */,
+				1C86A03D286425DC000DE550 /* Additional files */,
+				1C86A02D28642530000DE550 /* Main.storyboard */,
+				1C86A03528642531000DE550 /* Info.plist */,
+			);
+			path = TournamentManager1;
+			sourceTree = "<group>";
+		};
+		1C86A03D286425DC000DE550 /* Additional files */ = {
+			isa = PBXGroup;
+			children = (
+				1C86A03228642531000DE550 /* LaunchScreen.storyboard */,
+				1C86A02728642530000DE550 /* AppDelegate.swift */,
+				1C86A02928642530000DE550 /* SceneDelegate.swift */,
+				1C86A03028642531000DE550 /* Assets.xcassets */,
+			);
+			path = "Additional files";
+			sourceTree = "<group>";
+		};
+		1C86A03E286425F6000DE550 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				1C86A02B28642530000DE550 /* ViewController.swift */,
+				1C86A03F2864269F000DE550 /* SignUpViewController.swift */,
+				1C86A041286426AC000DE550 /* LoginViewController.swift */,
+				1C86A043286426BA000DE550 /* MainViewController.swift */,
+				1C86A055286451C4000DE550 /* AddTournamentViewController.swift */,
+				1C86A05728645236000DE550 /* DetailViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		1C86A0452864271C000DE550 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				1C86A0462864273B000DE550 /* PersonSignUp.swift */,
+				1C86A04828642752000DE550 /* PersonLogin.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		1C86A04A2864276C000DE550 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				1C86A04B2864277D000DE550 /* Utilities.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		1C86A05028644CF9000DE550 /* Tournament */ = {
+			isa = PBXGroup;
+			children = (
+				E67DED152864DE7E00E3AAC8 /* TournamentDetails.swift */,
+				1C86A05328644D34000DE550 /* TournamentTableViewCell.swift */,
+			);
+			path = Tournament;
+			sourceTree = "<group>";
+		};
+		1C86A05928646C73000DE550 /* Media */ = {
+			isa = PBXGroup;
+			children = (
+				1C86A05A28646CC9000DE550 /* teenage-mutant-ninja-turtles-season-5-official-trailer-baby-turtles-aliens_5esaxJkR.mp4 */,
+			);
+			path = Media;
+			sourceTree = "<group>";
+		};
+		1C86A05F2864A35C000DE550 /* NetworkManager */ = {
+			isa = PBXGroup;
+			children = (
+				1C86A03B286425C9000DE550 /* NetworkManagerAF.swift */,
+				1C86A0602864A38F000DE550 /* Urls.swift */,
+			);
+			path = NetworkManager;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1C86A02328642530000DE550 /* TournamentManager1 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1C86A03828642531000DE550 /* Build configuration list for PBXNativeTarget "TournamentManager1" */;
+			buildPhases = (
+				1C86A02028642530000DE550 /* Sources */,
+				1C86A02128642530000DE550 /* Frameworks */,
+				1C86A02228642530000DE550 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TournamentManager1;
+			packageProductDependencies = (
+				1C86A05D28649924000DE550 /* Alamofire */,
+			);
+			productName = TournamentManager1;
+			productReference = 1C86A02428642530000DE550 /* TournamentManager1.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1C86A01C28642530000DE550 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1330;
+				LastUpgradeCheck = 1330;
+				TargetAttributes = {
+					1C86A02328642530000DE550 = {
+						CreatedOnToolsVersion = 13.3.1;
+					};
+				};
+			};
+			buildConfigurationList = 1C86A01F28642530000DE550 /* Build configuration list for PBXProject "TournamentManager1" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 1C86A01B28642530000DE550;
+			packageReferences = (
+				1C86A05C28649924000DE550 /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
+			productRefGroup = 1C86A02528642530000DE550 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1C86A02328642530000DE550 /* TournamentManager1 */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1C86A02228642530000DE550 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1C86A05B28646CC9000DE550 /* teenage-mutant-ninja-turtles-season-5-official-trailer-baby-turtles-aliens_5esaxJkR.mp4 in Resources */,
+				1C86A03428642531000DE550 /* LaunchScreen.storyboard in Resources */,
+				1C86A03128642531000DE550 /* Assets.xcassets in Resources */,
+				1C86A02F28642530000DE550 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1C86A02028642530000DE550 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1C86A05428644D34000DE550 /* TournamentTableViewCell.swift in Sources */,
+				1C86A044286426BA000DE550 /* MainViewController.swift in Sources */,
+				1C86A042286426AC000DE550 /* LoginViewController.swift in Sources */,
+				1C86A056286451C4000DE550 /* AddTournamentViewController.swift in Sources */,
+				1C86A0472864273B000DE550 /* PersonSignUp.swift in Sources */,
+				1C86A02C28642530000DE550 /* ViewController.swift in Sources */,
+				E67DED162864DE7E00E3AAC8 /* TournamentDetails.swift in Sources */,
+				1C86A03C286425C9000DE550 /* NetworkManagerAF.swift in Sources */,
+				1C86A02828642530000DE550 /* AppDelegate.swift in Sources */,
+				1C86A0612864A38F000DE550 /* Urls.swift in Sources */,
+				1C86A02A28642530000DE550 /* SceneDelegate.swift in Sources */,
+				1C86A0402864269F000DE550 /* SignUpViewController.swift in Sources */,
+				1C86A05828645236000DE550 /* DetailViewController.swift in Sources */,
+				1C86A04C2864277D000DE550 /* Utilities.swift in Sources */,
+				1C86A04928642752000DE550 /* PersonLogin.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		1C86A02D28642530000DE550 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1C86A02E28642530000DE550 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		1C86A03228642531000DE550 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1C86A03328642531000DE550 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		1C86A03628642531000DE550 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		1C86A03728642531000DE550 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		1C86A03928642531000DE550 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 8929LKR6YS;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TournamentManager1/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = aida.TournamentManager1;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		1C86A03A28642531000DE550 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 8929LKR6YS;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TournamentManager1/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = aida.TournamentManager1;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1C86A01F28642530000DE550 /* Build configuration list for PBXProject "TournamentManager1" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1C86A03628642531000DE550 /* Debug */,
+				1C86A03728642531000DE550 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1C86A03828642531000DE550 /* Build configuration list for PBXNativeTarget "TournamentManager1" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1C86A03928642531000DE550 /* Debug */,
+				1C86A03A28642531000DE550 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		1C86A05C28649924000DE550 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		1C86A05D28649924000DE550 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1C86A05C28649924000DE550 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 1C86A01C28642530000DE550 /* Project object */;
+}
