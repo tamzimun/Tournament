@@ -7,9 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1C6234F028730CA00043D3FC /* ActiveTournament.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6234EF28730CA00043D3FC /* ActiveTournament.swift */; };
+		1C6234F228730CC90043D3FC /* ActiveTourTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6234F128730CC90043D3FC /* ActiveTourTableViewCell.swift */; };
+		1C6234F42873124D0043D3FC /* ActiveTourDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6234F32873124D0043D3FC /* ActiveTourDetailViewController.swift */; };
+		1C6234F72873288E0043D3FC /* Participant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6234F62873288E0043D3FC /* Participant.swift */; };
+		1C6234F9287329200043D3FC /* ParticipantsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6234F8287329200043D3FC /* ParticipantsTableViewCell.swift */; };
 		1C86A02828642530000DE550 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C86A02728642530000DE550 /* AppDelegate.swift */; };
 		1C86A02A28642530000DE550 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C86A02928642530000DE550 /* SceneDelegate.swift */; };
-		1C86A02C28642530000DE550 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C86A02B28642530000DE550 /* ViewController.swift */; };
+		1C86A02C28642530000DE550 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C86A02B28642530000DE550 /* HomeViewController.swift */; };
 		1C86A02F28642530000DE550 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C86A02D28642530000DE550 /* Main.storyboard */; };
 		1C86A03128642531000DE550 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1C86A03028642531000DE550 /* Assets.xcassets */; };
 		1C86A03428642531000DE550 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C86A03228642531000DE550 /* LaunchScreen.storyboard */; };
@@ -26,14 +31,21 @@
 		1C86A05B28646CC9000DE550 /* teenage-mutant-ninja-turtles-season-5-official-trailer-baby-turtles-aliens_5esaxJkR.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 1C86A05A28646CC9000DE550 /* teenage-mutant-ninja-turtles-season-5-official-trailer-baby-turtles-aliens_5esaxJkR.mp4 */; };
 		1C86A05E28649924000DE550 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 1C86A05D28649924000DE550 /* Alamofire */; };
 		1C86A0612864A38F000DE550 /* Urls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C86A0602864A38F000DE550 /* Urls.swift */; };
+		1CA8E1FC2872D6CE003AD213 /* ActiveTourViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CA8E1FB2872D6CE003AD213 /* ActiveTourViewController.swift */; };
+		1CE64A3B2872C310004669A3 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE64A3A2872C310004669A3 /* ProfileViewController.swift */; };
 		E67DED162864DE7E00E3AAC8 /* TournamentDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = E67DED152864DE7E00E3AAC8 /* TournamentDetails.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1C6234EF28730CA00043D3FC /* ActiveTournament.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveTournament.swift; sourceTree = "<group>"; };
+		1C6234F128730CC90043D3FC /* ActiveTourTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveTourTableViewCell.swift; sourceTree = "<group>"; };
+		1C6234F32873124D0043D3FC /* ActiveTourDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveTourDetailViewController.swift; sourceTree = "<group>"; };
+		1C6234F62873288E0043D3FC /* Participant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Participant.swift; sourceTree = "<group>"; };
+		1C6234F8287329200043D3FC /* ParticipantsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticipantsTableViewCell.swift; sourceTree = "<group>"; };
 		1C86A02428642530000DE550 /* TournamentManager1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TournamentManager1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C86A02728642530000DE550 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1C86A02928642530000DE550 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		1C86A02B28642530000DE550 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		1C86A02B28642530000DE550 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		1C86A02E28642530000DE550 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1C86A03028642531000DE550 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1C86A03328642531000DE550 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -50,6 +62,8 @@
 		1C86A05728645236000DE550 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		1C86A05A28646CC9000DE550 /* teenage-mutant-ninja-turtles-season-5-official-trailer-baby-turtles-aliens_5esaxJkR.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "teenage-mutant-ninja-turtles-season-5-official-trailer-baby-turtles-aliens_5esaxJkR.mp4"; sourceTree = "<group>"; };
 		1C86A0602864A38F000DE550 /* Urls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Urls.swift; sourceTree = "<group>"; };
+		1CA8E1FB2872D6CE003AD213 /* ActiveTourViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveTourViewController.swift; sourceTree = "<group>"; };
+		1CE64A3A2872C310004669A3 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		E67DED152864DE7E00E3AAC8 /* TournamentDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TournamentDetails.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -65,6 +79,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1C6234EE28730C550043D3FC /* ActiveTournament */ = {
+			isa = PBXGroup;
+			children = (
+				1C6234EF28730CA00043D3FC /* ActiveTournament.swift */,
+				1C6234F128730CC90043D3FC /* ActiveTourTableViewCell.swift */,
+			);
+			path = ActiveTournament;
+			sourceTree = "<group>";
+		};
+		1C6234F5287328470043D3FC /* Participant */ = {
+			isa = PBXGroup;
+			children = (
+				1C6234F62873288E0043D3FC /* Participant.swift */,
+				1C6234F8287329200043D3FC /* ParticipantsTableViewCell.swift */,
+			);
+			path = Participant;
+			sourceTree = "<group>";
+		};
 		1C86A01B28642530000DE550 = {
 			isa = PBXGroup;
 			children = (
@@ -85,9 +117,11 @@
 			isa = PBXGroup;
 			children = (
 				1C86A05928646C73000DE550 /* Media */,
-				1C86A0452864271C000DE550 /* Models */,
-				1C86A05028644CF9000DE550 /* Tournament */,
 				1C86A04A2864276C000DE550 /* Helpers */,
+				1C86A0452864271C000DE550 /* Authorithation */,
+				1C86A05028644CF9000DE550 /* Tournament */,
+				1C6234EE28730C550043D3FC /* ActiveTournament */,
+				1C6234F5287328470043D3FC /* Participant */,
 				1C86A03E286425F6000DE550 /* View Controllers */,
 				1C86A05F2864A35C000DE550 /* NetworkManager */,
 				1C86A03D286425DC000DE550 /* Additional files */,
@@ -111,23 +145,21 @@
 		1C86A03E286425F6000DE550 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				1C86A02B28642530000DE550 /* ViewController.swift */,
-				1C86A03F2864269F000DE550 /* SignUpViewController.swift */,
-				1C86A041286426AC000DE550 /* LoginViewController.swift */,
-				1C86A043286426BA000DE550 /* MainViewController.swift */,
-				1C86A055286451C4000DE550 /* AddTournamentViewController.swift */,
-				1C86A05728645236000DE550 /* DetailViewController.swift */,
+				1CA8E1FD2872D6DC003AD213 /* Authorization */,
+				1CA8E1FE2872D6F3003AD213 /* Tournaments */,
+				1CA8E1FF2872D711003AD213 /* ActiveTournaments */,
+				1CA8E2002872D727003AD213 /* Profile */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
 		};
-		1C86A0452864271C000DE550 /* Models */ = {
+		1C86A0452864271C000DE550 /* Authorithation */ = {
 			isa = PBXGroup;
 			children = (
 				1C86A0462864273B000DE550 /* PersonSignUp.swift */,
 				1C86A04828642752000DE550 /* PersonLogin.swift */,
 			);
-			path = Models;
+			path = Authorithation;
 			sourceTree = "<group>";
 		};
 		1C86A04A2864276C000DE550 /* Helpers */ = {
@@ -162,6 +194,43 @@
 				1C86A0602864A38F000DE550 /* Urls.swift */,
 			);
 			path = NetworkManager;
+			sourceTree = "<group>";
+		};
+		1CA8E1FD2872D6DC003AD213 /* Authorization */ = {
+			isa = PBXGroup;
+			children = (
+				1C86A02B28642530000DE550 /* HomeViewController.swift */,
+				1C86A03F2864269F000DE550 /* SignUpViewController.swift */,
+				1C86A041286426AC000DE550 /* LoginViewController.swift */,
+			);
+			path = Authorization;
+			sourceTree = "<group>";
+		};
+		1CA8E1FE2872D6F3003AD213 /* Tournaments */ = {
+			isa = PBXGroup;
+			children = (
+				1C86A043286426BA000DE550 /* MainViewController.swift */,
+				1C86A055286451C4000DE550 /* AddTournamentViewController.swift */,
+				1C86A05728645236000DE550 /* DetailViewController.swift */,
+			);
+			path = Tournaments;
+			sourceTree = "<group>";
+		};
+		1CA8E1FF2872D711003AD213 /* ActiveTournaments */ = {
+			isa = PBXGroup;
+			children = (
+				1CA8E1FB2872D6CE003AD213 /* ActiveTourViewController.swift */,
+				1C6234F32873124D0043D3FC /* ActiveTourDetailViewController.swift */,
+			);
+			path = ActiveTournaments;
+			sourceTree = "<group>";
+		};
+		1CA8E2002872D727003AD213 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				1CE64A3A2872C310004669A3 /* ProfileViewController.swift */,
+			);
+			path = Profile;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -245,16 +314,23 @@
 				1C86A05428644D34000DE550 /* TournamentTableViewCell.swift in Sources */,
 				1C86A044286426BA000DE550 /* MainViewController.swift in Sources */,
 				1C86A042286426AC000DE550 /* LoginViewController.swift in Sources */,
+				1C6234F42873124D0043D3FC /* ActiveTourDetailViewController.swift in Sources */,
 				1C86A056286451C4000DE550 /* AddTournamentViewController.swift in Sources */,
+				1CA8E1FC2872D6CE003AD213 /* ActiveTourViewController.swift in Sources */,
 				1C86A0472864273B000DE550 /* PersonSignUp.swift in Sources */,
-				1C86A02C28642530000DE550 /* ViewController.swift in Sources */,
+				1C6234F228730CC90043D3FC /* ActiveTourTableViewCell.swift in Sources */,
+				1C86A02C28642530000DE550 /* HomeViewController.swift in Sources */,
+				1CE64A3B2872C310004669A3 /* ProfileViewController.swift in Sources */,
 				E67DED162864DE7E00E3AAC8 /* TournamentDetails.swift in Sources */,
 				1C86A03C286425C9000DE550 /* NetworkManagerAF.swift in Sources */,
 				1C86A02828642530000DE550 /* AppDelegate.swift in Sources */,
 				1C86A0612864A38F000DE550 /* Urls.swift in Sources */,
+				1C6234F028730CA00043D3FC /* ActiveTournament.swift in Sources */,
 				1C86A02A28642530000DE550 /* SceneDelegate.swift in Sources */,
 				1C86A0402864269F000DE550 /* SignUpViewController.swift in Sources */,
+				1C6234F72873288E0043D3FC /* Participant.swift in Sources */,
 				1C86A05828645236000DE550 /* DetailViewController.swift in Sources */,
+				1C6234F9287329200043D3FC /* ParticipantsTableViewCell.swift in Sources */,
 				1C86A04C2864277D000DE550 /* Utilities.swift in Sources */,
 				1C86A04928642752000DE550 /* PersonLogin.swift in Sources */,
 			);

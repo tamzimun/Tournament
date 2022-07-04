@@ -8,7 +8,7 @@
 import UIKit
 import AVKit
 
-class ViewController: UIViewController {
+class HomeViewController: UIViewController {
     
     private var videoPlayer:AVPlayer?
     private var videoPlayerLayer:AVPlayerLayer?

@@ -22,15 +22,18 @@
                                     <constraint firstAttribute="width" constant="150" id="k60-me-7No"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="JUSAN " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QIe-aW-VSO">
-                                <rect key="frame" x="132" y="543" width="150" height="25.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="JUSAN  SINGULARITY" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QIe-aW-VSO">
+                                <rect key="frame" x="132" y="543" width="150" height="50.5"/>
                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="21"/>
                                 <color key="textColor" red="0.92549026010000002" green="0.3686274886" blue="0.1647058874" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SINGULARITY" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8eV-aJ-Xj6">
-                                <rect key="frame" x="132" y="575.5" width="150" height="25.5"/>
-                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TOURNAMENT" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8eV-aJ-Xj6">
+                                <rect key="frame" x="80.5" y="750" width="253" height="46"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="46" id="eV8-ZA-o2V"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Rockwell-Regular" family="Rockwell" pointSize="33"/>
                                 <color key="textColor" red="0.1570351425" green="0.36652877750000001" blue="0.75827561210000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -42,16 +45,15 @@
                             <constraint firstItem="NEy-it-ObA" firstAttribute="centerY" secondItem="qPU-6G-dpM" secondAttribute="centerY" id="5dR-4v-93a"/>
                             <constraint firstItem="QIe-aW-VSO" firstAttribute="trailing" secondItem="NEy-it-ObA" secondAttribute="trailing" id="Ao7-xc-x0D"/>
                             <constraint firstItem="QIe-aW-VSO" firstAttribute="leading" secondItem="NEy-it-ObA" secondAttribute="leading" id="FC1-Iq-8gu"/>
-                            <constraint firstItem="8eV-aJ-Xj6" firstAttribute="leading" secondItem="NEy-it-ObA" secondAttribute="leading" id="GEa-5a-ud1"/>
                             <constraint firstItem="NEy-it-ObA" firstAttribute="centerX" secondItem="qPU-6G-dpM" secondAttribute="centerX" id="JXm-62-i0h"/>
-                            <constraint firstItem="8eV-aJ-Xj6" firstAttribute="trailing" secondItem="NEy-it-ObA" secondAttribute="trailing" id="iWH-yh-Lt1"/>
-                            <constraint firstItem="8eV-aJ-Xj6" firstAttribute="top" secondItem="QIe-aW-VSO" secondAttribute="bottom" constant="7" id="p6q-RH-jdF"/>
+                            <constraint firstItem="8eV-aJ-Xj6" firstAttribute="centerX" secondItem="v7u-I3-zKf" secondAttribute="centerX" id="SpX-XH-FkW"/>
+                            <constraint firstItem="qPU-6G-dpM" firstAttribute="bottom" secondItem="8eV-aJ-Xj6" secondAttribute="bottom" constant="66" id="xik-AU-C2e"/>
                         </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kuu-G4-scn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-174" y="411"/>
+            <point key="canvasLocation" x="-175.36231884057972" y="410.49107142857139"/>
         </scene>
     </scenes>
     <resources>

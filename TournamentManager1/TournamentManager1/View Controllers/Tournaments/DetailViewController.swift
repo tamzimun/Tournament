@@ -14,6 +14,7 @@ class DetailViewController: UIViewController {
     @IBOutlet var imageView: UIImageView!
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var descriptionLabel: UILabel!
+    @IBOutlet var participantsLabel: UILabel!
     @IBOutlet var joinButton: UIButton!
     @IBOutlet var startButton: UIButton!
     
@@ -33,13 +34,14 @@ class DetailViewController: UIViewController {
             }
             titleLabel.text = tournament.type
             descriptionLabel.text = tournament.description
+            participantsLabel.text = "Participants: \(tournament.participants)"
             title = tournament.type
         }
 //        loadTournaments(id: tournamentId!)
     }
     
     func setUpUtilities() {
-        Utilities.styleFilledButton(joinButton)
+        Utilities.styleHollowBorderButton(joinButton)
         Utilities.styleHollowBorderButton(startButton)
     }
     

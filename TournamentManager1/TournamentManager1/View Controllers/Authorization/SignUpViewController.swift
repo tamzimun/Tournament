@@ -80,13 +80,13 @@ class SignUpViewController: UIViewController {
                 guard self != nil else { return }
                 switch result {
                 case let .success(message):
+                    self!.transitionToHome()
                     // some toastview to show that user is registered
                     print("\(String(describing: message)): 123")
                 case let .failure(error):
                     print("\(error): 456")
                 }
             }
-            self.transitionToHome()
         }
     }
     
@@ -96,7 +96,6 @@ class SignUpViewController: UIViewController {
     }
     
     func transitionToHome() {
-
         self.navigationController?.popViewController(animated: true)
         view.window?.makeKeyAndVisible()
     }

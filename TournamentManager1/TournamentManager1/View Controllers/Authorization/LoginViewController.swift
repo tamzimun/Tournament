@@ -51,7 +51,7 @@ class LoginViewController: UIViewController {
                 guard self != nil else { return }
                 switch result {
                 case let .success(message):
-                    
+                    self!.goToTournController()
                     print("\(String(describing: message)): 123")
                     
                 case let .failure(error):
@@ -59,18 +59,21 @@ class LoginViewController: UIViewController {
                     print("\(error): 456")
                 }
             }
-            transitionToMainView()
         }
+    }
+    
+    func goToTournController() {
+        // after login is done, maybe put this in the login web service completion block
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let mainTabBarController = storyboard.instantiateViewController(identifier: "MainTabBarController")
+        
+        // This is to get the SceneDelegate object from your view controller
+        // then call the change root view controller function to change to main tab bar
+        (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(mainTabBarController)
     }
     
     func showError(_ message: String) {
         errorLabel.text = message
         errorLabel.alpha = 1
-    }
-    
-    func transitionToMainView() {
-
-        let homeViewController = self.storyboard?.instantiateViewController(withIdentifier: "MainViewController") as? MainViewController
-        self.navigationController?.pushViewController(homeViewController!, animated: true)
     }
 }

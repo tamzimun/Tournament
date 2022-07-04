@@ -143,12 +143,12 @@ final class NetworkManagerAF {
                 let data = data,
                 let response = response as? HTTPURLResponse,
                         error == nil
-                    else {                                            // check for fundamental networking error
+                    else {                                       // check for fundamental networking error
                         print("Select another game or updated token")//print("error", error ?? URLError(.badServerResponse))
                         return
                     }
                     
-                    guard (200 ... 299) ~= response.statusCode else {                    // check for http errors
+                    guard (200 ... 299) ~= response.statusCode else {  // check for http errors
                         print("statusCode should be 2xx, but is \(response.statusCode)")
                         print("response = \(response)")
                         return
@@ -201,6 +201,50 @@ final class NetworkManagerAF {
         task.resume()
     }
 
+    func loadActiveTournaments(completion: @escaping ([ActiveTournaments]) -> Void) {
+        var components = urlComponents
+        components.path = "/api/v1/app/tournament/tourney/started"
+        
+        guard let requestUrl = components.url else {
+            return
+        }
+        let task = session.dataTask(with: requestUrl) { data, response, error in
+            guard error == nil else {
+                print("Error: error calling GET")
+                return
+            }
+            guard let data = data else {
+                print("Error: Did not receive data")
+                return
+            }
+            guard let response = response as? HTTPURLResponse, (200 ..< 300) ~= response.statusCode else {
+                print("Error: HTTP request failed")
+                return
+            }
+            do {
+                var tourArray = [ActiveTournaments]()
+                let test = try JSONSerialization.jsonObject(with: data)
+                if let jsonArray = test as? [[String:Any]] {
+                   
+                   for x in jsonArray {
+                       let tempTour = ActiveTournaments(id: x["id"] as! Int, name: x["name"] as! String, type: "type", description: x["description"] as! String, participants: x["participants"] as! Int)
+                        tourArray.append(tempTour)
+                   }
+                }
+                DispatchQueue.main.async {
+                    completion(tourArray)
+                }
+                
+            } catch {
+                DispatchQueue.main.async {
+                    completion([])
+                }
+            }
+        }
+        task.resume()
+    }
+
+    
     func loadTournamentsMainID(id: Int, completion: @escaping ([TournamentMain]) -> Void ) {
         loadTournamentsMain(path: "/movie/\(id)/credits") { tournaments in
             completion(tournaments)

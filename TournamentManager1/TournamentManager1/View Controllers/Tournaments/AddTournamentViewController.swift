@@ -82,13 +82,11 @@ class AddTournamentViewController: UIViewController {
                         print(message?.description ?? "")
                         print("Pushed new tournament")
                         print("\(String(describing: message)): 123")
+                        self!.transitionToMainView()
                     case let .failure(error):
-                        print(error.localizedDescription)
+                        print("Somthing went wrong \(error)")
                     }
                 }
-            if let MainViewController = navigationController?.viewControllers.filter({$0 is MainViewController}).first {
-                navigationController?.popToViewController(MainViewController, animated: true)
-            }
         }
     }
     
@@ -129,11 +127,8 @@ extension AddTournamentViewController: UITextViewDelegate {
         let updatedText = (currentText as NSString).replacingCharacters(in: range, with: text)
         
         if updatedText.isEmpty {
-
             textView.text = "Enter tournament description"
-            
             textView.textColor = UIColor.systemGray3
-
             textView.selectedTextRange = textView.textRange(from: textView.beginningOfDocument, to: textView.beginningOfDocument)
         }
 
@@ -141,8 +136,7 @@ extension AddTournamentViewController: UITextViewDelegate {
             textView.font = UIFont(name: "verdana", size: 16.0)
             textView.textColor = UIColor.black
             textView.text = text
-        }
-
+         }
         else {
             return true
         }

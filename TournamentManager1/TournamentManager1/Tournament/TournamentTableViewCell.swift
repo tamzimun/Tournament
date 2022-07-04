@@ -12,9 +12,9 @@ class TournamentTableViewCell: UITableViewCell {
 
 
     @IBOutlet var tounamentImageView: UIImageView!
-    @IBOutlet var activeLabel: UILabel!
     @IBOutlet var nameLabel: UILabel!
-    @IBOutlet var activeContainerView: UIView!
+    @IBOutlet var descriptionLabel: UILabel!
+    @IBOutlet var participants: UILabel!
     
     func configure(with tournament: TournamentDetails) {
         tounamentImageView.image = UIImage(named: "\(tournament.type).jpeg")
@@ -22,9 +22,7 @@ class TournamentTableViewCell: UITableViewCell {
             tounamentImageView.image = UIImage(named: "defaultBanner.jpeg")
         }
         nameLabel.text = tournament.type
-        
-        activeContainerView.backgroundColor = .systemGreen
-        activeLabel.text = "Active"
+        descriptionLabel.text = tournament.description
+        participants.text = "\(tournament.participants)"
     }
-    
 }

@@ -9,8 +9,6 @@ import UIKit
 
 class MainViewController: UIViewController {
     
-    private var safeArea: UILayoutGuide!
-    
     @IBOutlet var tableView: UITableView!
     
     private let networkManager: NetworkManagerAF = .shared
@@ -22,34 +20,20 @@ class MainViewController: UIViewController {
         }
     }
 
-    static var identifier =  "ViewController"
-
     override func viewDidLoad() {
         super.viewDidLoad()
-        safeArea = view.layoutMarginsGuide
-    
+
         loadTournaments()
         tableView.delegate = self
         tableView.dataSource = self
-        title = "Tournaments"
-        setUpNaviagtion()
     }
     
-    func setUpNaviagtion() {
-        navigationItem.title = "Tournaments"
+    @IBAction func addTournament(_ sender: UIBarButtonItem) {
         
-        self.navigationController?.view.backgroundColor = .white
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(handleAddTournament))
-    }
-
-    // MARK: - Selectors
-
-    @objc func handleAddTournament () {
         let controller = self.storyboard?.instantiateViewController(withIdentifier: "AddTournamentViewController") as? AddTournamentViewController
-
         navigationController?.pushViewController(controller!, animated: true)
-
     }
+    
 }
 
 extension MainViewController: UITableViewDelegate, UITableViewDataSource {
@@ -73,16 +57,6 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
         self.navigationController?.pushViewController(vc, animated: true)
     }
 }
-
-//extension MainViewController:  AddTournamentDelegate {
-//
-//    func addTournament(tournament: TournamentDetails) {
-//        self.dismiss(animated: true) {
-//            self.tournaments.append(tournament)
-//            self.tableView.reloadData()
-//        }
-//    }
-//}
 
 extension MainViewController {
     private func loadTournaments() {
