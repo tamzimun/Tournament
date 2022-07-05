@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SwiftKeychainWrapper
 
 protocol AddTournamentDelegate: AnyObject {
     func addTournament(tournament: TournamentDetails)
@@ -26,7 +27,8 @@ class AddTournamentViewController: UIViewController {
     private var chooseTournament: String = ""
     private let tournaments: [String] = ["MortalCombat", "Fifa", "Tenis","UFC"]
     private var cellIndex: Int?
-
+    private let retrievedToken: String? = KeychainWrapper.standard.string(forKey: "token")
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
@@ -75,14 +77,14 @@ class AddTournamentViewController: UIViewController {
             
             let tourToSend = TournamentDto(name: tournamentName, type: tournament, description: description)
             
-                networkManager.postTournaments(credentials: tourToSend) { [weak self] result in
+            networkManager.postTournaments(token: retrievedToken ?? "", credentials: tourToSend) { [weak self] result in
                     guard self != nil else { return }
                     switch result {
                     case let .success(message):
                         print(message?.description ?? "")
                         print("Pushed new tournament")
                         print("\(String(describing: message)): 123")
-                        self!.transitionToMainView()
+                        self!.navigationController?.popViewController(animated: true)
                     case let .failure(error):
                         print("Somthing went wrong \(error)")
                     }
@@ -93,10 +95,6 @@ class AddTournamentViewController: UIViewController {
     func showError(_ message: String) {
         errorLbl.text = message
         errorLbl.alpha = 1
-    }
-    
-    func transitionToMainView() {
-        self.navigationController?.popViewController(animated: true)
     }
 }
 

@@ -13,7 +13,7 @@ class ActiveTourTableViewCell: UITableViewCell {
     @IBOutlet var titleLabel: UILabel!
     
     
-    func configure(with tournament: ActiveTournaments) {
+    func configure(with tournament: ActiveTournament) {
         tournamentImageView.image = UIImage(named: "\(tournament.type).jpeg")
         if (UIImage(named: "\(tournament.type).jpeg") == nil){
             tournamentImageView.image = UIImage(named: "defaultBanner.jpeg")

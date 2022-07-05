@@ -11,6 +11,20 @@ import Foundation
 enum APINetworkError: Error {
     case dataNotFound
     case httpRequestFailed
+    case dontHaveRights(String)
+}
+
+
+struct Response: Codable {
+    let id: String
+    let username: String
+    let token: String
+    
+    enum CodingKeys: String, CodingKey {
+        case id
+        case username
+        case token
+    }
 }
 
 extension APINetworkError: LocalizedError {
@@ -20,6 +34,8 @@ extension APINetworkError: LocalizedError {
             return "Error: Did not receive data"
         case .httpRequestFailed:
             return "Error: HTTP request failed"
+        case .dontHaveRights:
+            return "Error: You don't have rights"
         }
     }
 }
@@ -123,49 +139,69 @@ final class NetworkManagerAF {
         task.resume()
     }
     
-    func postTournaments(credentials: TournamentDto, completion: @escaping (Result<String?, Error>) -> Void) {
+    func postTournaments(token: String, credentials: TournamentDto, completion: @escaping (Result<String?, Error>) -> Void) {
         var components = urlComponents
         components.path = "/api/v1/app/tournament/create"
         guard let url = components.url else {
             return
         }
-        let token:String = "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhaWRhIiwicm9sZXMiOlsiUk9MRV9VU0VSIl0sImV4cCI6MTY1NjA0Njk0MiwiaWF0IjoxNjU2MDQzMzQyfQ.v8IGRJ_oo_SNE7rEReLTrHMyemZAxQCRK4AF-xFkHgk"
+
         var urlRequest = URLRequest(url: url)
         urlRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
         urlRequest.setValue("*/*", forHTTPHeaderField: "Accept")
-        urlRequest.httpMethod = "POST"
         urlRequest.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
+        urlRequest.httpMethod = "POST"
         urlRequest.httpBody = try? JSONEncoder().encode(credentials)
         
         
         let task = session.dataTask(with: urlRequest) { data, response, error in
-            guard
-                let data = data,
-                let response = response as? HTTPURLResponse,
-                        error == nil
-                    else {                                       // check for fundamental networking error
-                        print("Select another game or updated token")//print("error", error ?? URLError(.badServerResponse))
-                        return
-                    }
-                    
-                    guard (200 ... 299) ~= response.statusCode else {  // check for http errors
-                        print("statusCode should be 2xx, but is \(response.statusCode)")
-                        print("response = \(response)")
-                        return
-                    }
+            
+            guard error == nil else {
+                DispatchQueue.main.async {
+                    completion(.failure(error!))
+                    print(error!)
+                }
+                return
+            }
+            
+            guard let data = data else {
+                DispatchQueue.main.async {
+                    completion(.failure(APINetworkError.dataNotFound))
+                }
+                return
+            }
+            
+            guard let response = response as? HTTPURLResponse, (200 ..< 300) ~= response.statusCode else {
+                DispatchQueue.main.async {
+                    completion(.failure(APINetworkError.httpRequestFailed))
+                    print(response!)
+                }
+                return
+            }
+            
+            let message = String(data: data, encoding: .utf8)
+            DispatchQueue.main.async {
+                completion(.success(message))
+            }
+
         }
         task.resume()
     }
-    
     
     func loadTournaments(completion: @escaping ([TournamentDetails]) -> Void) {
         var components = urlComponents
         components.path = "/api/v1/app/tournament/tourney/registration"
         
         guard let requestUrl = components.url else {
+            print("wrong url")
             return
         }
-        let task = session.dataTask(with: requestUrl) { data, response, error in
+        
+        var urlRequest = URLRequest(url: requestUrl)
+        urlRequest.setValue("*/*", forHTTPHeaderField: "Accept")
+        urlRequest.httpMethod = "GET"
+        
+        let task = session.dataTask(with: urlRequest) { data, response, error in
             guard error == nil else {
                 print("Error: error calling GET")
                 return
@@ -182,7 +218,7 @@ final class NetworkManagerAF {
                 var tourArray = [TournamentDetails]()
                 let test = try JSONSerialization.jsonObject(with: data)
                 if let jsonArray = test as? [[String:Any]] {
-                   
+
                    for x in jsonArray {
                        let tempTour = TournamentDetails(id: x["id"] as! Int, type: x["type"] as! String, status: "Registration", description: x["description"] as! String, participants: x["participants"] as! Int)
                         tourArray.append(tempTour)
@@ -193,6 +229,7 @@ final class NetworkManagerAF {
                 }
                 
             } catch {
+                print("no json")
                 DispatchQueue.main.async {
                     completion([])
                 }
@@ -200,15 +237,22 @@ final class NetworkManagerAF {
         }
         task.resume()
     }
-
-    func loadActiveTournaments(completion: @escaping ([ActiveTournaments]) -> Void) {
+   
+    func loadActiveTournaments(token: String, completion: @escaping ([ActiveTournament]) -> Void) {
+        
         var components = urlComponents
         components.path = "/api/v1/app/tournament/tourney/started"
         
-        guard let requestUrl = components.url else {
+        guard let url = components.url else {
             return
         }
-        let task = session.dataTask(with: requestUrl) { data, response, error in
+    
+        var urlRequest = URLRequest(url: url)
+        urlRequest.setValue("Bearer_\(token)", forHTTPHeaderField: "Authorization")
+        urlRequest.setValue("*/*", forHTTPHeaderField: "Accept")
+        urlRequest.httpMethod = "GET"
+        
+        let task = session.dataTask(with: urlRequest) { data, response, error in
             guard error == nil else {
                 print("Error: error calling GET")
                 return
@@ -218,24 +262,17 @@ final class NetworkManagerAF {
                 return
             }
             guard let response = response as? HTTPURLResponse, (200 ..< 300) ~= response.statusCode else {
-                print("Error: HTTP request failed")
+                print("HTTP request error \(String(describing: response))")
                 return
             }
             do {
-                var tourArray = [ActiveTournaments]()
-                let test = try JSONSerialization.jsonObject(with: data)
-                if let jsonArray = test as? [[String:Any]] {
-                   
-                   for x in jsonArray {
-                       let tempTour = ActiveTournaments(id: x["id"] as! Int, name: x["name"] as! String, type: "type", description: x["description"] as! String, participants: x["participants"] as! Int)
-                        tourArray.append(tempTour)
-                   }
-                }
+                let tourArray: [ActiveTournament] = try JSONDecoder().decode([ActiveTournament].self, from: data)
                 DispatchQueue.main.async {
                     completion(tourArray)
                 }
                 
             } catch {
+                print("no json")
                 DispatchQueue.main.async {
                     completion([])
                 }
@@ -244,21 +281,125 @@ final class NetworkManagerAF {
         task.resume()
     }
 
-    
-    func loadTournamentsMainID(id: Int, completion: @escaping ([TournamentMain]) -> Void ) {
-        loadTournamentsMain(path: "/movie/\(id)/credits") { tournaments in
-            completion(tournaments)
-        }
-    }
-    
-    func loadTournamentsMain(path: String, completion: @escaping ([TournamentMain]) -> Void) {
+    func postJoinTour(token: String, id: Int, completion: @escaping (Result<String?, Error>) -> Void) {
         var components = urlComponents
-        components.path = "/api/v1/app/tournament/tourney/id/\(path)"
-        
-        guard let requestUrl = components.url else {
+        components.path = "/api/v1/app/tournament/join/\(id)"
+        guard let url = components.url else {
             return
         }
-        let task = session.dataTask(with: requestUrl) { data, response, error in
+
+        var urlRequest = URLRequest(url: url)
+        urlRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        urlRequest.setValue("*/*", forHTTPHeaderField: "Accept")
+        urlRequest.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
+        urlRequest.httpMethod = "POST"
+        urlRequest.httpBody = try? JSONEncoder().encode(id)
+        
+        let task = session.dataTask(with: urlRequest) { data, response, error in
+            
+            guard error == nil else {
+                DispatchQueue.main.async {
+                    completion(.failure(error!))
+                    print(error!)
+                }
+                return
+            }
+            
+            guard let data = data else {
+                DispatchQueue.main.async {
+                    completion(.failure(APINetworkError.dataNotFound))
+                }
+                return
+            }
+            
+            guard let response = response as? HTTPURLResponse, (200 ..< 300) ~= response.statusCode else {
+                DispatchQueue.main.async {
+                    completion(.failure(APINetworkError.httpRequestFailed))
+                    print(response!)
+                }
+                return
+            }
+            
+            let message = String(data: data, encoding: .utf8)
+            DispatchQueue.main.async {
+                completion(.success(message))
+            }
+
+        }
+        task.resume()
+    }
+    
+    func postStartTour(token: String, id: Int, completion: @escaping (Result<String?, Error>) -> Void) {
+        var components = urlComponents
+        components.path = "/api/v1/app/tournament/start/\(id)"
+        guard let url = components.url else {
+            return
+        }
+
+        var urlRequest = URLRequest(url: url)
+        urlRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        urlRequest.setValue("*/*", forHTTPHeaderField: "Accept")
+        urlRequest.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
+        urlRequest.httpMethod = "POST"
+        urlRequest.httpBody = try? JSONEncoder().encode(id)
+        
+        let task = session.dataTask(with: urlRequest) { data, response, error in
+            
+            guard error == nil else {
+                DispatchQueue.main.async {
+                    completion(.failure(error!))
+                    print(error!)
+                }
+                return
+            }
+            
+            guard let data = data else {
+                DispatchQueue.main.async {
+                    completion(.failure(APINetworkError.dataNotFound))
+                }
+                return
+            }
+            
+            guard let response = response as? HTTPURLResponse, (200 ..< 300) ~= response.statusCode else {
+                DispatchQueue.main.async {
+                    completion(.failure(APINetworkError.httpRequestFailed))
+                    print(response!)
+                }
+                return
+            }
+            
+//            guard let response = response as? HTTPURLResponse, (406) ~= response.statusCode else {
+//                DispatchQueue.main.async {
+//                    completion(.failure(GameError.notPermitted(406)))
+//                    print(response)
+//                }
+//                return
+//            }
+            print("my error code is \(error!._code)")
+            
+            let message = String(data: data, encoding: .utf8)
+            DispatchQueue.main.async {
+                completion(.success(message))
+            }
+
+        }
+        task.resume()
+    }
+    
+    func loadLeaderBoard(id: Int, completion: @escaping ([Leader]) -> Void) {
+        var components = urlComponents
+        components.path = "/api/v1/app/tournament/tourney/leaderboard/\(id)"
+        
+        guard let requestUrl = components.url else {
+            print("wrong url")
+            return
+        }
+        
+        var urlRequest = URLRequest(url: requestUrl)
+        urlRequest.setValue("*/*", forHTTPHeaderField: "Accept")
+        urlRequest.httpMethod = "GET"
+        
+        let task = session.dataTask(with: urlRequest) { data, response, error in
             guard error == nil else {
                 print("Error: error calling GET")
                 return
@@ -272,20 +413,21 @@ final class NetworkManagerAF {
                 return
             }
             do {
-                var tourArray = [TournamentMain]()
+                var leadersArray = [Leader]()
                 let test = try JSONSerialization.jsonObject(with: data)
                 if let jsonArray = test as? [[String:Any]] {
-                   
+
                    for x in jsonArray {
-                       let tempTour = TournamentMain(id: x["id"] as! Int,name: x["name"] as! String, type: x["type"] as! String, description: x["description"] as! String)
-                        tourArray.append(tempTour)
-                       }
+                       let leaders = Leader(name: x["name"] as! String, surname: x["surname"] as! String, score: x["score"] as! Int)
+                       leadersArray.append(leaders)
+                   }
                 }
                 DispatchQueue.main.async {
-                    completion(tourArray)
+                    completion(leadersArray)
                 }
                 
             } catch {
+                print("no json")
                 DispatchQueue.main.async {
                     completion([])
                 }

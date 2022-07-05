@@ -19,7 +19,7 @@ class MainViewController: UIViewController {
             tableView.reloadData()
         }
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -33,7 +33,6 @@ class MainViewController: UIViewController {
         let controller = self.storyboard?.instantiateViewController(withIdentifier: "AddTournamentViewController") as? AddTournamentViewController
         navigationController?.pushViewController(controller!, animated: true)
     }
-    
 }
 
 extension MainViewController: UITableViewDelegate, UITableViewDataSource {
@@ -63,8 +62,7 @@ extension MainViewController {
          //network request
         networkManager.loadTournaments { [weak self] tournaments in
             self?.tournaments = tournaments
-            self?.loadTournaments()
+            self?.tableView.reloadData()
         }
     }
 }
-

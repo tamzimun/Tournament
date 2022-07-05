@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct ActiveTournaments: Codable {
+struct ActiveTournament: Codable {
     var id: Int
     var name: String
     var type: String

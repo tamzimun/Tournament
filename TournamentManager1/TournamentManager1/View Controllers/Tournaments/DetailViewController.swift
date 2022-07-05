@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SwiftKeychainWrapper
 
 class DetailViewController: UIViewController {
     
@@ -21,7 +22,9 @@ class DetailViewController: UIViewController {
     private var touraments: [TournamentDetails] = []
     var tournament: TournamentDetails?
     var tournamentId: Int?
-    private var gameId: Int?
+    var data: String = ""
+    
+    private let retrievedToken: String? = KeychainWrapper.standard.string(forKey: "token")
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,29 +40,64 @@ class DetailViewController: UIViewController {
             participantsLabel.text = "Participants: \(tournament.participants)"
             title = tournament.type
         }
-//        loadTournaments(id: tournamentId!)
     }
     
     func setUpUtilities() {
+        
         Utilities.styleHollowBorderButton(joinButton)
         Utilities.styleHollowBorderButton(startButton)
     }
     
     @IBAction func joinButtonTapped(_ sender: UIButton) {
         
+        guard let tournamentId = tournamentId else {
+            return
+        }
+        
+        networkManager.postJoinTour(token: retrievedToken ?? "", id: tournamentId) { [weak self] result in
+            guard self != nil else { return }
+            switch result {
+            case let .success(message):
+                print("\(String(describing: message)): 123")
+                
+                Utilities.styleFilledButtenTapped(self!.joinButton)
+            case let .failure(error):
+                
+                let alert = UIAlertController(title: "Error", message: "You have already joined!", preferredStyle: UIAlertController.Style.alert)
+
+                alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+                
+                self!.present(alert, animated: true, completion: nil)
+                print("\(error): 456")
+            }
+        }
+        
     }
     
     @IBAction func startButtonTapped(_ sender: UIButton) {
         
+        guard let tournamentId = tournamentId else {
+            return
+        }
+
+        networkManager.postStartTour(token: retrievedToken ?? "", id: tournamentId) { [weak self] result in
+            guard self != nil else { return }
+            switch result {
+            case let .success(message):
+                print("\(String(describing: message)): 123")
+                
+                Utilities.styleFilledButtenTapped(self!.startButton)
+            case let .failure(error):
+                
+                let alert = UIAlertController(title: "Error", message: "The tournament can only be started by the one who created it!!", preferredStyle: UIAlertController.Style.alert)
+
+                alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+                
+                self!.present(alert, animated: true, completion: nil)
+                print("\(error): 456")
+            }
+        }
     }
-    
 }
 
-//extension DetailViewController {
-//
-//    private func loadTournaments(id: Int) {
-//        networkManager.loadTournamentsMainID(id: id){ [weak self] tournaments in
-//            self?.tournament = tournaments
-//        }
-//    }
-//}
+

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SwiftKeychainWrapper
 
 class LoginViewController: UIViewController {
 
@@ -16,8 +17,12 @@ class LoginViewController: UIViewController {
     @IBOutlet var loginButton: UIButton!
     @IBOutlet var errorLabel: UILabel!
     
+    var data: String!
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         setUpElements()
     }
 
@@ -46,11 +51,27 @@ class LoginViewController: UIViewController {
             guard let password = passwordTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) else { return }
             
             let login = PersonLogin(login: username, password: password)
+
             
             networkManager.postLogin(credentials: login) { [weak self] result in
                 guard self != nil else { return }
                 switch result {
                 case let .success(message):
+                    
+                    self!.data = message
+                    let temp = message?.dropFirst().dropLast()
+                    
+                    let array = temp?.components(separatedBy: ",")
+                    let separatedTokens = array![0].components(separatedBy: ":")
+                    let token = separatedTokens[1].dropFirst().dropLast()
+                    
+                    let saveToken: Bool = KeychainWrapper.standard.set(String(token), forKey: "token")
+                    
+//                    let vc = self?.storyboard?.instantiateViewController(withIdentifier: "ActiveTourViewController") as! ActiveTourViewController
+//
+//                    vc.token = String(token)
+//                    self?.navigationController?.pushViewController(vc, animated: true)
+                    
                     self!.goToTournController()
                     print("\(String(describing: message)): 123")
                     
@@ -63,12 +84,11 @@ class LoginViewController: UIViewController {
     }
     
     func goToTournController() {
-        // after login is done, maybe put this in the login web service completion block
+        
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let mainTabBarController = storyboard.instantiateViewController(identifier: "MainTabBarController")
-        
         // This is to get the SceneDelegate object from your view controller
-        // then call the change root view controller function to change to main tab bar
+        // root view controller function to change to main tab bar
         (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(mainTabBarController)
     }
     

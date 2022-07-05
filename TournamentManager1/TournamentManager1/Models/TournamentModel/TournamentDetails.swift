@@ -16,7 +16,7 @@ struct TournamentDetails: Codable {
     var participants: Int
 }
 
-struct TournamentDto: Codable {
+struct TournamentDto: Encodable {
     var name: String
     var type: String
     var description: String

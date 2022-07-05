@@ -6,6 +6,7 @@
 
 
 import UIKit
+import SwiftKeychainWrapper
 
 class ActiveTourViewController: UIViewController {
 
@@ -13,7 +14,7 @@ class ActiveTourViewController: UIViewController {
     
     private let networkManager: NetworkManagerAF = .shared
     
-    var activeTournaments: [ActiveTournaments] = []
+    var activeTournaments: [ActiveTournament] = []
     {
         didSet {
             tableView.reloadData()
@@ -23,7 +24,7 @@ class ActiveTourViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        loadActiveTournaments()
+        loadActiveTour()
         tableView.delegate = self
         tableView.dataSource = self
     }
@@ -44,19 +45,19 @@ extension ActiveTourViewController: UITableViewDelegate, UITableViewDataSource {
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        let vc = storyboard?.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
+        let vc = storyboard?.instantiateViewController(withIdentifier: "DetailActiveTourViewController") as! DetailActiveTourViewController
 //        vc.tournament = tournaments[indexPath.row]
-//        vc.tournamentId = tournaments[indexPath.row].id
+        vc.tournamentId = activeTournaments[indexPath.row].id
         self.navigationController?.pushViewController(vc, animated: true)
     }
 }
 
 extension ActiveTourViewController {
-    private func loadActiveTournaments() {
+    private func loadActiveTour() {
          //network request
-        networkManager.loadActiveTournaments() { [weak self] activeTournaments in
+        let retrievedToken: String? = KeychainWrapper.standard.string(forKey: "token")
+        networkManager.loadActiveTournaments(token: retrievedToken ?? "") { [weak self] activeTournaments in
             self?.activeTournaments = activeTournaments
-            self?.loadActiveTournaments()
         }
     }
 }
