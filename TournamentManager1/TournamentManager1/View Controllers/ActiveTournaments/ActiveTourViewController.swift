@@ -27,6 +27,13 @@ class ActiveTourViewController: UIViewController {
         loadActiveTour()
         tableView.delegate = self
         tableView.dataSource = self
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        loadActiveTour()
+        tableView.reloadData()
     }
 }
 
@@ -46,9 +53,9 @@ extension ActiveTourViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         let vc = storyboard?.instantiateViewController(withIdentifier: "DetailActiveTourViewController") as! DetailActiveTourViewController
-//        vc.tournament = tournaments[indexPath.row]
         vc.tournamentId = activeTournaments[indexPath.row].id
         self.navigationController?.pushViewController(vc, animated: true)
+        tableView.reloadData()
     }
 }
 
@@ -58,6 +65,8 @@ extension ActiveTourViewController {
         let retrievedToken: String? = KeychainWrapper.standard.string(forKey: "token")
         networkManager.loadActiveTournaments(token: retrievedToken ?? "") { [weak self] activeTournaments in
             self?.activeTournaments = activeTournaments
+            self?.tableView.reloadData()
         }
     }
 }
+

@@ -9,7 +9,7 @@ import UIKit
 import SwiftKeychainWrapper
 
 protocol AddTournamentDelegate: AnyObject {
-    func addTournament(tournament: TournamentDetails)
+    func addTournament(tournament: TournamentLists)
 }
 
 class AddTournamentViewController: UIViewController {
@@ -61,6 +61,7 @@ class AddTournamentViewController: UIViewController {
             descriptionField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" {
             return "Please fill in all fields."
         }
+
         return nil
     }
     
@@ -75,7 +76,7 @@ class AddTournamentViewController: UIViewController {
             guard let description = descriptionField.text?.trimmingCharacters(in: .whitespacesAndNewlines) else { return }
             let tournament = chooseTournament
             
-            let tourToSend = TournamentDto(name: tournamentName, type: tournament, description: description)
+            let tourToSend = AddTournament(name: tournamentName, type: tournament, description: description)
             
             networkManager.postTournaments(token: retrievedToken ?? "", credentials: tourToSend) { [weak self] result in
                     guard self != nil else { return }
@@ -86,6 +87,7 @@ class AddTournamentViewController: UIViewController {
                         print("\(String(describing: message)): 123")
                         self!.navigationController?.popViewController(animated: true)
                     case let .failure(error):
+                        self!.showError("This tournament has already created, please choose another tournament.")
                         print("Somthing went wrong \(error)")
                     }
                 }

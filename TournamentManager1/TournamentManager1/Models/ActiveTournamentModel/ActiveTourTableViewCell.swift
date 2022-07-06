@@ -11,6 +11,8 @@ class ActiveTourTableViewCell: UITableViewCell {
 
     @IBOutlet var tournamentImageView: UIImageView!
     @IBOutlet var titleLabel: UILabel!
+    @IBOutlet var descriptionLabel: UILabel!
+    @IBOutlet var participantsLabel: UILabel!
     
     
     func configure(with tournament: ActiveTournament) {
@@ -19,5 +21,7 @@ class ActiveTourTableViewCell: UITableViewCell {
             tournamentImageView.image = UIImage(named: "defaultBanner.jpeg")
         }
         titleLabel.text = tournament.name
+        descriptionLabel.text = tournament.description
+        participantsLabel.text = "\(tournament.participants)"
     }
 }

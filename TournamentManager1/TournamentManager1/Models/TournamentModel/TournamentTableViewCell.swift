@@ -16,12 +16,12 @@ class TournamentTableViewCell: UITableViewCell {
     @IBOutlet var descriptionLabel: UILabel!
     @IBOutlet var participants: UILabel!
     
-    func configure(with tournament: TournamentDetails) {
+    func configure(with tournament: TournamentLists) {
         tounamentImageView.image = UIImage(named: "\(tournament.type).jpeg")
         if (UIImage(named: "\(tournament.type).jpeg") == nil){
             tounamentImageView.image = UIImage(named: "defaultBanner.jpeg")
         }
-        nameLabel.text = tournament.type
+        nameLabel.text = tournament.name
         descriptionLabel.text = tournament.description
         participants.text = "\(tournament.participants)"
     }

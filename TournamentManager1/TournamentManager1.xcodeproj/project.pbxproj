@@ -10,9 +10,11 @@
 		1C6234F028730CA00043D3FC /* ActiveTournament.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6234EF28730CA00043D3FC /* ActiveTournament.swift */; };
 		1C6234F228730CC90043D3FC /* ActiveTourTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6234F128730CC90043D3FC /* ActiveTourTableViewCell.swift */; };
 		1C6234F42873124D0043D3FC /* DetailActiveTourViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6234F32873124D0043D3FC /* DetailActiveTourViewController.swift */; };
-		1C6234F72873288E0043D3FC /* Participant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6234F62873288E0043D3FC /* Participant.swift */; };
-		1C6234F9287329200043D3FC /* ParticipantsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6234F8287329200043D3FC /* ParticipantsTableViewCell.swift */; };
+		1C6234F72873288E0043D3FC /* TournamentBracket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6234F62873288E0043D3FC /* TournamentBracket.swift */; };
+		1C6234F9287329200043D3FC /* TournamentBracketTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6234F8287329200043D3FC /* TournamentBracketTableViewCell.swift */; };
 		1C623502287475640043D3FC /* Leaders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C623501287475640043D3FC /* Leaders.swift */; };
+		1C62350428755C080043D3FC /* TournamentDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C62350328755C080043D3FC /* TournamentDetail.swift */; };
+		1C6235072875B6360043D3FC /* ProfileInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6235062875B6360043D3FC /* ProfileInfo.swift */; };
 		1C86A02828642530000DE550 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C86A02728642530000DE550 /* AppDelegate.swift */; };
 		1C86A02A28642530000DE550 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C86A02928642530000DE550 /* SceneDelegate.swift */; };
 		1C86A02C28642530000DE550 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C86A02B28642530000DE550 /* HomeViewController.swift */; };
@@ -35,7 +37,7 @@
 		1CA8E1FC2872D6CE003AD213 /* ActiveTourViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CA8E1FB2872D6CE003AD213 /* ActiveTourViewController.swift */; };
 		1CE64A3B2872C310004669A3 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE64A3A2872C310004669A3 /* ProfileViewController.swift */; };
 		38E78FE06107833A2FBCB32F /* Pods_TournamentManager1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC0182F50179A429C9A35D1A /* Pods_TournamentManager1.framework */; };
-		E67DED162864DE7E00E3AAC8 /* TournamentDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = E67DED152864DE7E00E3AAC8 /* TournamentDetails.swift */; };
+		E67DED162864DE7E00E3AAC8 /* TournamentLists.swift in Sources */ = {isa = PBXBuildFile; fileRef = E67DED152864DE7E00E3AAC8 /* TournamentLists.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,9 +45,11 @@
 		1C6234EF28730CA00043D3FC /* ActiveTournament.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveTournament.swift; sourceTree = "<group>"; };
 		1C6234F128730CC90043D3FC /* ActiveTourTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveTourTableViewCell.swift; sourceTree = "<group>"; };
 		1C6234F32873124D0043D3FC /* DetailActiveTourViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailActiveTourViewController.swift; sourceTree = "<group>"; };
-		1C6234F62873288E0043D3FC /* Participant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Participant.swift; sourceTree = "<group>"; };
-		1C6234F8287329200043D3FC /* ParticipantsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticipantsTableViewCell.swift; sourceTree = "<group>"; };
+		1C6234F62873288E0043D3FC /* TournamentBracket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TournamentBracket.swift; sourceTree = "<group>"; };
+		1C6234F8287329200043D3FC /* TournamentBracketTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TournamentBracketTableViewCell.swift; sourceTree = "<group>"; };
 		1C623501287475640043D3FC /* Leaders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Leaders.swift; sourceTree = "<group>"; };
+		1C62350328755C080043D3FC /* TournamentDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TournamentDetail.swift; sourceTree = "<group>"; };
+		1C6235062875B6360043D3FC /* ProfileInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInfo.swift; sourceTree = "<group>"; };
 		1C86A02428642530000DE550 /* TournamentManager1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TournamentManager1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C86A02728642530000DE550 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1C86A02928642530000DE550 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -68,7 +72,7 @@
 		1C86A0602864A38F000DE550 /* Urls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Urls.swift; sourceTree = "<group>"; };
 		1CA8E1FB2872D6CE003AD213 /* ActiveTourViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveTourViewController.swift; sourceTree = "<group>"; };
 		1CE64A3A2872C310004669A3 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
-		E67DED152864DE7E00E3AAC8 /* TournamentDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TournamentDetails.swift; sourceTree = "<group>"; };
+		E67DED152864DE7E00E3AAC8 /* TournamentLists.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TournamentLists.swift; sourceTree = "<group>"; };
 		EC0182F50179A429C9A35D1A /* Pods_TournamentManager1.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TournamentManager1.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FDC8D4ABA00C363A26DD10C6 /* Pods-TournamentManager1.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TournamentManager1.release.xcconfig"; path = "Target Support Files/Pods-TournamentManager1/Pods-TournamentManager1.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -98,8 +102,8 @@
 		1C6234F5287328470043D3FC /* ParticipantModel */ = {
 			isa = PBXGroup;
 			children = (
-				1C6234F62873288E0043D3FC /* Participant.swift */,
-				1C6234F8287329200043D3FC /* ParticipantsTableViewCell.swift */,
+				1C6234F62873288E0043D3FC /* TournamentBracket.swift */,
+				1C6234F8287329200043D3FC /* TournamentBracketTableViewCell.swift */,
 			);
 			path = ParticipantModel;
 			sourceTree = "<group>";
@@ -107,10 +111,12 @@
 		1C6234FD287426D80043D3FC /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				1C86A05028644CF9000DE550 /* TournamentModel */,
 				1C86A0452864271C000DE550 /* AuthorithationModels */,
+				1C86A05028644CF9000DE550 /* TournamentModel */,
+				1C6235052875A6790043D3FC /* TournamentDetails */,
 				1C6234EE28730C550043D3FC /* ActiveTournamentModel */,
 				1C6234F5287328470043D3FC /* ParticipantModel */,
+				1C6235082875B63C0043D3FC /* ProfileInfo */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -121,6 +127,22 @@
 				1C623501287475640043D3FC /* Leaders.swift */,
 			);
 			path = LeaderBoard;
+			sourceTree = "<group>";
+		};
+		1C6235052875A6790043D3FC /* TournamentDetails */ = {
+			isa = PBXGroup;
+			children = (
+				1C62350328755C080043D3FC /* TournamentDetail.swift */,
+			);
+			path = TournamentDetails;
+			sourceTree = "<group>";
+		};
+		1C6235082875B63C0043D3FC /* ProfileInfo */ = {
+			isa = PBXGroup;
+			children = (
+				1C6235062875B6360043D3FC /* ProfileInfo.swift */,
+			);
+			path = ProfileInfo;
 			sourceTree = "<group>";
 		};
 		1C86A01B28642530000DE550 = {
@@ -199,7 +221,7 @@
 		1C86A05028644CF9000DE550 /* TournamentModel */ = {
 			isa = PBXGroup;
 			children = (
-				E67DED152864DE7E00E3AAC8 /* TournamentDetails.swift */,
+				E67DED152864DE7E00E3AAC8 /* TournamentLists.swift */,
 				1C86A05328644D34000DE550 /* TournamentTableViewCell.swift */,
 			);
 			path = TournamentModel;
@@ -409,16 +431,18 @@
 				1C86A02C28642530000DE550 /* HomeViewController.swift in Sources */,
 				1CE64A3B2872C310004669A3 /* ProfileViewController.swift in Sources */,
 				1C623502287475640043D3FC /* Leaders.swift in Sources */,
-				E67DED162864DE7E00E3AAC8 /* TournamentDetails.swift in Sources */,
+				E67DED162864DE7E00E3AAC8 /* TournamentLists.swift in Sources */,
 				1C86A03C286425C9000DE550 /* NetworkManagerAF.swift in Sources */,
 				1C86A02828642530000DE550 /* AppDelegate.swift in Sources */,
 				1C86A0612864A38F000DE550 /* Urls.swift in Sources */,
 				1C6234F028730CA00043D3FC /* ActiveTournament.swift in Sources */,
 				1C86A02A28642530000DE550 /* SceneDelegate.swift in Sources */,
+				1C62350428755C080043D3FC /* TournamentDetail.swift in Sources */,
 				1C86A0402864269F000DE550 /* SignUpViewController.swift in Sources */,
-				1C6234F72873288E0043D3FC /* Participant.swift in Sources */,
+				1C6234F72873288E0043D3FC /* TournamentBracket.swift in Sources */,
+				1C6235072875B6360043D3FC /* ProfileInfo.swift in Sources */,
 				1C86A05828645236000DE550 /* DetailViewController.swift in Sources */,
-				1C6234F9287329200043D3FC /* ParticipantsTableViewCell.swift in Sources */,
+				1C6234F9287329200043D3FC /* TournamentBracketTableViewCell.swift in Sources */,
 				1C86A04C2864277D000DE550 /* Utilities.swift in Sources */,
 				1C86A04928642752000DE550 /* PersonLogin.swift in Sources */,
 			);

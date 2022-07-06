@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SwiftKeychainWrapper
 
 class MainViewController: UIViewController {
     
@@ -13,7 +14,7 @@ class MainViewController: UIViewController {
     
     private let networkManager: NetworkManagerAF = .shared
     
-    var tournaments: [TournamentDetails] = []
+    var tournaments: [TournamentLists] = []
     {
         didSet {
             tableView.reloadData()
@@ -26,6 +27,7 @@ class MainViewController: UIViewController {
         loadTournaments()
         tableView.delegate = self
         tableView.dataSource = self
+        
     }
     
     @IBAction func addTournament(_ sender: UIBarButtonItem) {
@@ -45,7 +47,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TournamentTableViewCell") as! TournamentTableViewCell
         
         cell.configure(with: tournaments[indexPath.row])
-        
+        cell.nameLabel.isHidden = false
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -54,13 +56,16 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
         vc.tournament = tournaments[indexPath.row]
         vc.tournamentId = tournaments[indexPath.row].id
         self.navigationController?.pushViewController(vc, animated: true)
+        tableView.reloadData()
     }
 }
 
 extension MainViewController {
     private func loadTournaments() {
          //network request
-        networkManager.loadTournaments { [weak self] tournaments in
+        let retrievedToken: String? = KeychainWrapper.standard.string(forKey: "token")
+        
+        networkManager.loadTournaments(token: retrievedToken ?? "") { [weak self] tournaments in
             self?.tournaments = tournaments
             self?.tableView.reloadData()
         }

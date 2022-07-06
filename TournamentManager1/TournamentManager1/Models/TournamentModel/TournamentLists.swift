@@ -8,27 +8,22 @@
 import Foundation
 import UIKit
 
-struct TournamentDetails: Codable {
+struct TournamentLists: Codable {
     var id: Int
+    var name: String
     var type: String
-    var status: String
     var description: String
     var participants: Int
 }
 
-struct TournamentDto: Encodable {
+struct AddTournament: Encodable {
     var name: String
     var type: String
     var description: String
     
 }
 
-struct TournamentMain {
-    var id: Int
-    var name: String
-    var type: String
-    var description: String
-}
+
 
 
 
