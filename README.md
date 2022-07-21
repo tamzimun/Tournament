@@ -1,1 +1,1 @@
-# Front for tournament
+# Tournament app for hakaton in Jusan Singularity
