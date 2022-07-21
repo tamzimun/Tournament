@@ -45,12 +45,12 @@ final class NetworkManagerAF {
     static var shared = NetworkManagerAF()
     
     let retrievedToken: String? = KeychainWrapper.standard.string(forKey: "token")
-    
+
     var urlComponents: URLComponents = {
         var components = URLComponents()
-        components.scheme = "http"
-        components.host = "localhost"
-        components.port = 8189
+        components.scheme = "https"
+        components.host = "hack2-jusan.azurewebsites.net"
+//        / components.port = 8189
         return components
     }()
 
@@ -69,7 +69,7 @@ final class NetworkManagerAF {
 
         var urlRequest = URLRequest(url: url)
         urlRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        urlRequest.setValue("*/*", forHTTPHeaderField: "Accept")
+        urlRequest.setValue("application/json", forHTTPHeaderField: "Accept")
         urlRequest.httpMethod = "POST"
         urlRequest.httpBody = try? JSONEncoder().encode(credentials)
 
@@ -299,7 +299,6 @@ final class NetworkManagerAF {
                 return
             }
             guard let response = response as? HTTPURLResponse, (200 ..< 300) ~= response.statusCode else {
-                print("Error: HTTP request failed \(response)")
                 return
             }
             do {

@@ -21,6 +21,12 @@ class MainViewController: UIViewController {
         }
     }
     
+    override func loadView() {
+        super.loadView()
+        loadTournaments()
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -28,6 +34,16 @@ class MainViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        loadTournaments()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        loadTournaments()
     }
     
     @IBAction func addTournament(_ sender: UIBarButtonItem) {

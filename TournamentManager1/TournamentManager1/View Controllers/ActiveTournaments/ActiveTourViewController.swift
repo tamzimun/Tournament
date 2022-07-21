@@ -21,6 +21,13 @@ class ActiveTourViewController: UIViewController {
         }
     }
     
+    
+    override func loadView() {
+        super.loadView()
+        loadActiveTour()
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -33,8 +40,13 @@ class ActiveTourViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         loadActiveTour()
-        tableView.reloadData()
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        loadActiveTour()
+    }
+    
 }
 
 extension ActiveTourViewController: UITableViewDelegate, UITableViewDataSource {

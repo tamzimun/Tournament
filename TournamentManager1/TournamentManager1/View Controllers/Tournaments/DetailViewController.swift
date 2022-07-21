@@ -29,13 +29,31 @@ class DetailViewController: UIViewController {
     
     private let retrievedToken: String? = KeychainWrapper.standard.string(forKey: "token")
     
+    override func loadView() {
+        super.loadView()
+        loadTournamentsDetail()
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         setUpUtilities()
         loadTournamentsDetail()
         navigationController?.delegate = self
         setViewContollerDetails()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        loadTournamentsDetail()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        loadTournamentsDetail()
+    }
+    
     
     func setViewContollerDetails() {
         if let tournament = tournament {
@@ -99,7 +117,7 @@ class DetailViewController: UIViewController {
                 
             case let .failure(error):
                 
-                let alert = UIAlertController(title: "Error", message: "The tournament can only be started by the one who created it!", preferredStyle: UIAlertController.Style.alert)
+                let alert = UIAlertController(title: "Error", message: "The tournament can only be started by its owner or must be at least two participants!", preferredStyle: UIAlertController.Style.alert)
 
                 alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
 

@@ -45,6 +45,13 @@ class DetailActiveTourViewController: UIViewController {
     
     var threeTopResults: [String:Int] = [:]
     
+    override func loadView() {
+        super.loadView()
+        loadActiveTour()
+        loadTournamentBracket()
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -54,6 +61,20 @@ class DetailActiveTourViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        loadActiveTour()
+        loadTournamentBracket()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        loadActiveTour()
+        loadTournamentBracket()
+    }
+    
+    
 }
 
 extension DetailActiveTourViewController: UITableViewDelegate, UITableViewDataSource {

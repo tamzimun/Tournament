@@ -408,7 +408,7 @@
                                                         <color key="textColor" red="0.92549026010000002" green="0.3686274886" blue="0.1647058874" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description " lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="94j-57-NDp">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="94j-57-NDp">
                                                         <rect key="frame" x="0.0" y="39" width="365" height="22"/>
                                                         <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="19"/>
                                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -711,12 +711,23 @@
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="45  -" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ztK-px-u8J">
-                                                    <rect key="frame" x="171" y="47" width="36.5" height="21"/>
-                                                    <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="18"/>
-                                                    <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
+                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="GOn-al-Wmm">
+                                                    <rect key="frame" x="175.5" y="47" width="63" height="21"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="45  -" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ztK-px-u8J">
+                                                            <rect key="frame" x="0.0" y="0.0" width="36.5" height="21"/>
+                                                            <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="18"/>
+                                                            <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="96" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9H1-mt-l8T">
+                                                            <rect key="frame" x="41.5" y="0.0" width="21.5" height="21"/>
+                                                            <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="18"/>
+                                                            <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="winner: Aida Moldaly" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FBi-kg-eHR">
                                                     <rect key="frame" x="130" y="77" width="154" height="42"/>
                                                     <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="18"/>
@@ -744,30 +755,22 @@
                                                     <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="96" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9H1-mt-l8T">
-                                                    <rect key="frame" x="212.5" y="47" width="21.5" height="21"/>
-                                                    <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="18"/>
-                                                    <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="GOn-al-Wmm" firstAttribute="centerX" secondItem="u84-HA-0Zl" secondAttribute="centerX" id="AD6-51-Ucs"/>
                                                 <constraint firstItem="t5R-G9-O6u" firstAttribute="leading" secondItem="u84-HA-0Zl" secondAttribute="leading" constant="30" id="Hs0-2E-Xcf"/>
                                                 <constraint firstItem="FBi-kg-eHR" firstAttribute="leading" secondItem="V33-3k-ZSw" secondAttribute="leading" id="I9w-bM-KAv"/>
-                                                <constraint firstItem="FBi-kg-eHR" firstAttribute="top" secondItem="9H1-mt-l8T" secondAttribute="bottom" constant="9" id="ICC-tR-aQ3"/>
-                                                <constraint firstItem="9H1-mt-l8T" firstAttribute="top" secondItem="V33-3k-ZSw" secondAttribute="bottom" constant="5" id="Kqa-cg-wQM"/>
                                                 <constraint firstItem="8y8-6O-DUy" firstAttribute="leading" secondItem="t5R-G9-O6u" secondAttribute="leading" id="Qaj-gj-uZm"/>
                                                 <constraint firstItem="V33-3k-ZSw" firstAttribute="top" secondItem="t5R-G9-O6u" secondAttribute="top" id="RPp-Uy-U8h"/>
                                                 <constraint firstAttribute="bottom" secondItem="8y8-6O-DUy" secondAttribute="bottom" constant="5" id="SFo-Yr-Kad"/>
-                                                <constraint firstItem="ztK-px-u8J" firstAttribute="leading" secondItem="t5R-G9-O6u" secondAttribute="trailing" constant="51" id="TyO-26-elb"/>
+                                                <constraint firstItem="GOn-al-Wmm" firstAttribute="top" secondItem="V33-3k-ZSw" secondAttribute="bottom" constant="5" id="VcD-X6-76r"/>
                                                 <constraint firstItem="8y8-6O-DUy" firstAttribute="top" secondItem="t5R-G9-O6u" secondAttribute="bottom" constant="4" id="Ypl-hF-iWd"/>
+                                                <constraint firstItem="FBi-kg-eHR" firstAttribute="top" secondItem="GOn-al-Wmm" secondAttribute="bottom" constant="9" id="ZyA-jT-Wp8"/>
                                                 <constraint firstItem="OPg-bD-1Q0" firstAttribute="bottom" secondItem="8y8-6O-DUy" secondAttribute="bottom" id="a2J-Ur-7E0"/>
                                                 <constraint firstItem="FBi-kg-eHR" firstAttribute="trailing" secondItem="V33-3k-ZSw" secondAttribute="trailing" id="bVI-m9-tKa"/>
                                                 <constraint firstItem="OPg-bD-1Q0" firstAttribute="top" secondItem="8y8-6O-DUy" secondAttribute="top" id="bzH-8f-ePj"/>
                                                 <constraint firstItem="V33-3k-ZSw" firstAttribute="leading" secondItem="t5R-G9-O6u" secondAttribute="trailing" constant="10" id="ef6-Ei-hD7"/>
                                                 <constraint firstItem="t5R-G9-O6u" firstAttribute="top" secondItem="u84-HA-0Zl" secondAttribute="top" constant="10" id="eqe-88-KnO"/>
-                                                <constraint firstItem="9H1-mt-l8T" firstAttribute="leading" secondItem="ztK-px-u8J" secondAttribute="trailing" constant="5" id="inA-mV-hFj"/>
-                                                <constraint firstItem="ztK-px-u8J" firstAttribute="top" secondItem="V33-3k-ZSw" secondAttribute="bottom" constant="5" id="pfJ-Gs-yDZ"/>
                                                 <constraint firstItem="OPg-bD-1Q0" firstAttribute="leading" secondItem="sSv-AI-811" secondAttribute="leading" id="tBK-oQ-QcQ"/>
                                                 <constraint firstItem="sSv-AI-811" firstAttribute="top" secondItem="t5R-G9-O6u" secondAttribute="top" id="tLd-4o-dKh"/>
                                                 <constraint firstItem="8y8-6O-DUy" firstAttribute="trailing" secondItem="t5R-G9-O6u" secondAttribute="trailing" id="wMY-To-tOK"/>
