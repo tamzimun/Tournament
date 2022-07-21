@@ -1,1 +1,1 @@
-# Tournament app for hakaton in Jusan Singularity
+# Tournament app for hakaton 
