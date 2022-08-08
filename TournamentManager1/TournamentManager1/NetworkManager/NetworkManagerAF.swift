@@ -49,8 +49,9 @@ final class NetworkManagerAF {
     var urlComponents: URLComponents = {
         var components = URLComponents()
         components.scheme = "https"
-        components.host = "hack2-jusan.azurewebsites.net"
-//        / components.port = 8189
+        components.host = "localhost"
+//        "hack2-jusan.azurewebsites.net"
+        components.port = 8189
         return components
     }()
 
@@ -89,6 +90,7 @@ final class NetworkManagerAF {
             guard let response = response as? HTTPURLResponse, (200 ..< 300) ~= response.statusCode else {
                 DispatchQueue.main.async {
                     completion(.failure(APINetworkError.httpRequestFailed))
+                    print(response)
                 }
                 return
             }
