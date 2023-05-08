@@ -2,7 +2,7 @@
 //  ActiveTourTableViewCell.swift
 //  TournamentManager1
 //
-//  Created by Aida Moldaly on 04.07.2022.
+//  Created by tamzimun on 04.07.2022.
 //
 
 import UIKit

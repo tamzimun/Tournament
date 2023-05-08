@@ -2,7 +2,7 @@
 //  Leaders.swift
 //  TournamentManager1
 //
-//  Created by Aida Moldaly on 05.07.2022.
+//  Created by tamzimun on 05.07.2022.
 //
 
 import Foundation
